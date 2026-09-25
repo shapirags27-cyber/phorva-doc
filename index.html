@@ -1,319 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phorva Docs — Security & Verification for Autonomous Agents</title>
-  <meta name="description" content="Official documentation for Phorva — verification layer for autonomous agents. Learn how to integrate, verify swaps, bridges, transfers and more." />
+  <title>Phorva Docs</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <div class="layout">
-    <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
-      <div class="sidebar-header">
-        <a href="#" class="logo-link">
-          <img src="assets/logo.png" alt="Phorva" class="logo-img" />
-          <span>PHORVA</span>
-        </a>
+      <div class="sidebar-brand">
+        <img src="assets/logo.png" alt="Phorva" class="brand-logo" onerror="this.style.display='none'" />
+        <span>Phorva Docs</span>
       </div>
-
-      <nav class="sidebar-nav">
-        <div class="nav-group">
-          <div class="nav-group-title">Getting Started</div>
-          <a href="#what-is-phorva" class="nav-link active">What is Phorva</a>
-          <a href="#core-concepts" class="nav-link">Core Concepts</a>
-          <a href="#quickstart" class="nav-link">Quickstart</a>
+      <nav class="sidebar-nav" id="sidebarNav">
+        <div class="nav-section">
+          <div class="nav-section-title">Getting Started</div>
+          <a href="#introduction" class="nav-item active" data-page="introduction">Introduction</a>
+          <a href="#core-concepts" class="nav-item" data-page="core-concepts">Core Concepts</a>
+          <a href="#quickstart" class="nav-item" data-page="quickstart">Quickstart</a>
         </div>
-
-        <div class="nav-group">
-          <div class="nav-group-title">Supported Actions</div>
-          <a href="#transfers" class="nav-link">Transfers & Approvals</a>
-          <a href="#swaps" class="nav-link">Swaps</a>
-          <a href="#bridges" class="nav-link">Bridges</a>
-          <a href="#defi" class="nav-link">DeFi Actions</a>
-          <a href="#custom" class="nav-link">Custom Calls</a>
+        <div class="nav-section">
+          <div class="nav-section-title">Supported Actions</div>
+          <a href="#transfers" class="nav-item" data-page="transfers">Transfers & Approvals</a>
+          <a href="#swaps" class="nav-item" data-page="swaps">Swaps</a>
+          <a href="#bridges" class="nav-item" data-page="bridges">Bridges</a>
+          <a href="#defi" class="nav-item" data-page="defi">DeFi Actions</a>
+          <a href="#custom" class="nav-item" data-page="custom">Custom Calls</a>
         </div>
-
-        <div class="nav-group">
-          <div class="nav-group-title">SDKs & Integration</div>
-          <a href="#sdk" class="nav-link">JavaScript SDK</a>
-          <a href="#connect" class="nav-link">How to Connect</a>
-          <a href="#verify-action" class="nav-link">Verify an Action</a>
+        <div class="nav-section">
+          <div class="nav-section-title">SDK & Integration</div>
+          <a href="#sdk" class="nav-item" data-page="sdk">JavaScript SDK</a>
+          <a href="#connect" class="nav-item" data-page="connect">How to Connect</a>
+          <a href="#verify" class="nav-item" data-page="verify">Verify an Action</a>
         </div>
-
-        <div class="nav-group">
-          <div class="nav-group-title">Guides</div>
-          <a href="#intent" class="nav-link">Intent Matching</a>
-          <a href="#policy" class="nav-link">Policy & Risk</a>
-          <a href="#execution-graph" class="nav-link">Execution Graph</a>
+        <div class="nav-section">
+          <div class="nav-section-title">Guides</div>
+          <a href="#intent" class="nav-item" data-page="intent">Intent Matching</a>
+          <a href="#policy" class="nav-item" data-page="policy">Policy & Risk</a>
+          <a href="#execution-graph" class="nav-item" data-page="execution-graph">Execution Graph</a>
         </div>
-
-        <div class="nav-group">
-          <div class="nav-group-title">Concepts</div>
-          <a href="#proof-carrying" class="nav-link">Proof-Carrying Actions</a>
-          <a href="#trace" class="nav-link">Verification Trace</a>
-          <a href="#commitment" class="nav-link">Commitment</a>
+        <div class="nav-section">
+          <div class="nav-section-title">Concepts</div>
+          <a href="#proof" class="nav-item" data-page="proof">Proof-Carrying Actions</a>
+          <a href="#trace" class="nav-item" data-page="trace">Verification Trace</a>
+          <a href="#commitment" class="nav-item" data-page="commitment">Commitment</a>
         </div>
-
-        <div class="nav-group">
-          <div class="nav-group-title">Roadmap</div>
-          <a href="#roadmap" class="nav-link">Product Roadmap</a>
-        </div>
-
-        <div class="nav-group">
-          <div class="nav-group-title">Community</div>
-          <a href="https://x.com/PhorvaGuard" target="_blank" class="nav-link">X / Twitter</a>
-          <a href="https://discord.gg/ZVhkvdF3te" target="_blank" class="nav-link">Discord</a>
+        <div class="nav-section">
+          <div class="nav-section-title">Roadmap</div>
+          <a href="#roadmap" class="nav-item" data-page="roadmap">Product Roadmap</a>
         </div>
       </nav>
     </aside>
 
-    <!-- Main Content -->
-    <main class="main">
+    <div class="main">
       <header class="topbar">
-        <button class="menu-toggle" id="menuToggle">☰</button>
-        <div class="topbar-right">
-          <a href="https://x.com/PhorvaGuard" target="_blank" class="social">X</a>
-          <a href="https://discord.gg/ZVhkvdF3te" target="_blank" class="social">Discord</a>
-          <a href="https://phorva.io" target="_blank" class="btn-primary">Official Site</a>
+        <button class="menu-btn" id="menuBtn">☰</button>
+        <div class="search-box">
+          <span class="search-icon">⌕</span>
+          <input type="text" id="searchInput" placeholder="Search docs…" />
+          <kbd>⌘K</kbd>
+        </div>
+        <div class="topbar-actions">
+          <button class="theme-btn" id="themeBtn" title="Toggle theme">◐</button>
+          <a href="https://x.com/PhorvaGuard" target="_blank" class="top-link">X</a>
+          <a href="https://discord.gg/ZVhkvdF3te" target="_blank" class="top-link">Discord</a>
+          <a href="https://phorva.io" target="_blank" class="launch-btn">Official Site</a>
         </div>
       </header>
-
-      <div class="content">
-
-        <!-- Getting Started -->
-        <section id="what-is-phorva">
-          <p class="eyebrow">GETTING STARTED</p>
-          <h1>What is Phorva</h1>
-          <p class="lead">Phorva is the verification layer between autonomous agents and execution.</p>
-          <p>Agents decide. Execution systems execute. <strong>Phorva verifies</strong>.</p>
-          <p>It confirms that the action an agent attempts to perform is actually the action it was authorized to perform — across transfers, swaps, bridges, DeFi strategies and more.</p>
-        </section>
-
-        <section id="core-concepts">
-          <h2>Core Concepts</h2>
-          <div class="card-grid">
-            <div class="card">
-              <h3>Intent</h3>
-              <p>What the agent declared it wants to do.</p>
-            </div>
-            <div class="card">
-              <h3>Authorization</h3>
-              <p>The limits and policies the agent is allowed to operate within.</p>
-            </div>
-            <div class="card">
-              <h3>Execution Graph</h3>
-              <p>The full sequence of on-chain actions that make up a strategy.</p>
-            </div>
-            <div class="card">
-              <h3>Proof</h3>
-              <p>Cryptographic evidence that the execution matched the intent.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="quickstart">
-          <h2>Quickstart</h2>
-          <p>Get your first verification running in minutes.</p>
-          <pre><code>npm install @phorva/sdk
-
-import { Phorva } from '@phorva/sdk';
-
-const phorva = new Phorva({
-  network: 'base-sepolia',
-  apiKey: 'YOUR_API_KEY'
-});
-
-const result = await phorva.verify({
-  intent: { type: 'swap', amount: '300', token: 'USDC' },
-  maxAmount: '500'
-});
-
-console.log(result.verdict); // AUTHORIZED or BLOCKED</code></pre>
-        </section>
-
-        <!-- Supported Actions -->
-        <section id="transfers">
-          <p class="eyebrow">SUPPORTED ACTIONS</p>
-          <h1>Transfers & Approvals</h1>
-          <p>Verify simple token transfers and ERC-20 approvals against declared intent and policy limits.</p>
-        </section>
-
-        <section id="swaps">
-          <h2>Swaps</h2>
-          <p>Verify token swaps (exact input / exact output) including slippage protection and route validation.</p>
-        </section>
-
-        <section id="bridges">
-          <h2>Bridges (Cross-chain)</h2>
-          <p>Phorva supports verification of cross-chain bridge actions.</p>
-          <ul>
-            <li>Source chain → Destination chain validation</li>
-            <li>Amount and token matching</li>
-            <li>Bridge protocol allow-listing</li>
-            <li>Final destination state verification</li>
-          </ul>
-          <p>Example intent:</p>
-          <pre><code>{
-  "type": "bridge",
-  "fromChain": "base",
-  "toChain": "arbitrum",
-  "token": "USDC",
-  "amount": "1000",
-  "recipient": "0x..."
-}</code></pre>
-        </section>
-
-        <section id="defi">
-          <h2>DeFi Actions</h2>
-          <p>Support for common DeFi operations:</p>
-          <ul>
-            <li>Deposit / Withdraw</li>
-            <li>Stake / Unstake</li>
-            <li>Add / Remove Liquidity</li>
-            <li>Supply / Borrow / Repay</li>
-            <li>Claim rewards</li>
-          </ul>
-        </section>
-
-        <section id="custom">
-          <h2>Custom / Arbitrary Calls</h2>
-          <p>Any contract interaction can be verified using the Execution Graph model. Define the expected sequence of calls and final state.</p>
-        </section>
-
-        <!-- SDK -->
-        <section id="sdk">
-          <p class="eyebrow">SDKs & INTEGRATION</p>
-          <h1>JavaScript / TypeScript SDK</h1>
-          <p>Official SDK for integrating Phorva into agents, wallets and backends.</p>
-          <pre><code>npm install @phorva/sdk</code></pre>
-        </section>
-
-        <section id="connect">
-          <h2>How to Connect</h2>
-          <pre><code>import { Phorva } from '@phorva/sdk';
-
-const client = new Phorva({
-  apiKey: process.env.PHORVA_API_KEY,
-  network: 'base-sepolia' // or ethereum-sepolia, arbitrum-sepolia
-});</code></pre>
-        </section>
-
-        <section id="verify-action">
-          <h2>Verify an Action</h2>
-          <pre><code>const verification = await client.verify({
-  intent: {
-    type: 'bridge',
-    amount: '1000',
-    token: 'USDC',
-    fromChain: 'base',
-    toChain: 'ethereum'
-  },
-  maxAmount: '1500',
-  policyId: 'default-agent-policy'
-});
-
-if (verification.verdict === 'AUTHORIZED') {
-  // proceed with execution
-} else {
-  // block or alert
-}</code></pre>
-        </section>
-
-        <!-- Guides -->
-        <section id="intent">
-          <p class="eyebrow">GUIDES</p>
-          <h1>Intent Matching</h1>
-          <p>Phorva compares the declared intent against the actual calldata and state changes.</p>
-        </section>
-
-        <section id="policy">
-          <h2>Policy & Risk</h2>
-          <p>Define spending limits, allowed protocols, allowed chains, and risk thresholds.</p>
-        </section>
-
-        <section id="execution-graph">
-          <h2>Execution Graph</h2>
-          <p>Multi-step strategies are modeled as a graph. Phorva verifies the entire path, not just individual transactions.</p>
-        </section>
-
-        <!-- Concepts -->
-        <section id="proof-carrying">
-          <p class="eyebrow">CONCEPTS</p>
-          <h1>Proof-Carrying Actions</h1>
-          <p>Every verified action can carry a cryptographic proof containing intent, authorization, execution details, and final state commitment.</p>
-        </section>
-
-        <section id="trace">
-          <h2>Verification Trace</h2>
-          <p>Full record of how each condition was evaluated.</p>
-        </section>
-
-        <section id="commitment">
-          <h2>Commitment</h2>
-          <p>Deterministic commitment to the verified execution graph and proof statement.</p>
-        </section>
-
-        <!-- Roadmap -->
-        <section id="roadmap">
-          <p class="eyebrow">ROADMAP</p>
-          <h1>Product Roadmap</h1>
-          <p class="lead">From investor MVP to full execution ecosystem.</p>
-
-          <div class="card" style="margin-bottom: 16px;">
-            <h3>NOW — Investor / Partner MVP</h3>
-            <ul>
-              <li>Verification dashboard</li>
-              <li>Execution Graph & Trace</li>
-              <li>Proof-Carrying Action</li>
-              <li>Multi-chain testnet demo (Base, Ethereum, Arbitrum Sepolia)</li>
-              <li>Provider abstraction</li>
-              <li>Developer API surface</li>
-            </ul>
-          </div>
-
-          <div class="card" style="margin-bottom: 16px;">
-            <h3>NEXT — Production Infrastructure</h3>
-            <ul>
-              <li>Production API & SDK</li>
-              <li>Wallet integrations</li>
-              <li>Persistent verification records</li>
-              <li>External prover integrations</li>
-              <li>Expanded execution adapters</li>
-              <li>Monitoring and developer tooling</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>THEN — Execution Ecosystem</h3>
-            <ul>
-              <li>DeFi integrations</li>
-              <li>Prediction-market integrations</li>
-              <li>Agent-payment integrations</li>
-              <li>DAO / treasury integrations</li>
-              <li>Virtual Card execution rail</li>
-              <li>Mainnet deployment</li>
-              <li>Security audit</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Community -->
-        <section class="community-section">
-          <h2>Join the Community</h2>
-          <div class="community-links">
-            <a href="https://x.com/PhorvaGuard" target="_blank" class="community-card">X / Twitter — @PhorvaGuard</a>
-            <a href="https://discord.gg/ZVhkvdF3te" target="_blank" class="community-card">Discord — Join the community</a>
-          </div>
-        </section>
-
-      </div>
-    </main>
+      <main class="content" id="content"></main>
+    </div>
   </div>
-
-  <script src="js/main.js"></script>
+  <script src="js/pages.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
