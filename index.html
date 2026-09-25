@@ -59,6 +59,11 @@
         </div>
 
         <div class="nav-group">
+          <div class="nav-group-title">Roadmap</div>
+          <a href="#roadmap" class="nav-link">Product Roadmap</a>
+        </div>
+
+        <div class="nav-group">
           <div class="nav-group-title">Community</div>
           <a href="https://x.com/PhorvaGuard" target="_blank" class="nav-link">X / Twitter</a>
           <a href="https://discord.gg/ZVhkvdF3te" target="_blank" class="nav-link">Discord</a>
@@ -78,6 +83,7 @@
       </header>
 
       <div class="content">
+
         <!-- Getting Started -->
         <section id="what-is-phorva">
           <p class="eyebrow">GETTING STARTED</p>
@@ -126,8 +132,7 @@ const result = await phorva.verify({
   maxAmount: '500'
 });
 
-console.log(result.verdict); // AUTHORIZED or BLOCKED
-</code></pre>
+console.log(result.verdict); // AUTHORIZED or BLOCKED</code></pre>
         </section>
 
         <!-- Supported Actions -->
@@ -194,8 +199,7 @@ console.log(result.verdict); // AUTHORIZED or BLOCKED
 const client = new Phorva({
   apiKey: process.env.PHORVA_API_KEY,
   network: 'base-sepolia' // or ethereum-sepolia, arbitrum-sepolia
-});
-</code></pre>
+});</code></pre>
         </section>
 
         <section id="verify-action">
@@ -216,8 +220,7 @@ if (verification.verdict === 'AUTHORIZED') {
   // proceed with execution
 } else {
   // block or alert
-}
-</code></pre>
+}</code></pre>
         </section>
 
         <!-- Guides -->
@@ -254,6 +257,51 @@ if (verification.verdict === 'AUTHORIZED') {
           <p>Deterministic commitment to the verified execution graph and proof statement.</p>
         </section>
 
+        <!-- Roadmap -->
+        <section id="roadmap">
+          <p class="eyebrow">ROADMAP</p>
+          <h1>Product Roadmap</h1>
+          <p class="lead">From investor MVP to full execution ecosystem.</p>
+
+          <div class="card" style="margin-bottom: 16px;">
+            <h3>NOW — Investor / Partner MVP</h3>
+            <ul>
+              <li>Verification dashboard</li>
+              <li>Execution Graph & Trace</li>
+              <li>Proof-Carrying Action</li>
+              <li>Multi-chain testnet demo (Base, Ethereum, Arbitrum Sepolia)</li>
+              <li>Provider abstraction</li>
+              <li>Developer API surface</li>
+            </ul>
+          </div>
+
+          <div class="card" style="margin-bottom: 16px;">
+            <h3>NEXT — Production Infrastructure</h3>
+            <ul>
+              <li>Production API & SDK</li>
+              <li>Wallet integrations</li>
+              <li>Persistent verification records</li>
+              <li>External prover integrations</li>
+              <li>Expanded execution adapters</li>
+              <li>Monitoring and developer tooling</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>THEN — Execution Ecosystem</h3>
+            <ul>
+              <li>DeFi integrations</li>
+              <li>Prediction-market integrations</li>
+              <li>Agent-payment integrations</li>
+              <li>DAO / treasury integrations</li>
+              <li>Virtual Card execution rail</li>
+              <li>Mainnet deployment</li>
+              <li>Security audit</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Community -->
         <section class="community-section">
           <h2>Join the Community</h2>
           <div class="community-links">
@@ -261,6 +309,7 @@ if (verification.verdict === 'AUTHORIZED') {
             <a href="https://discord.gg/ZVhkvdF3te" target="_blank" class="community-card">Discord — Join the community</a>
           </div>
         </section>
+
       </div>
     </main>
   </div>
